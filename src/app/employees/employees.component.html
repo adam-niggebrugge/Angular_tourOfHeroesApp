@@ -1,0 +1,30 @@
+<h2>Norwood's Electrical Engineers</h2>
+
+<!-- generic angular creation like hello world  -->
+<!-- <p>employees works!</p>  -->
+
+<!-- step 2 how to list an array of objects *ngFor Angular array-->
+<ul class="employees">
+    <!-- Step 3 make the list clickable by adding (click)="onSelect(object instance) event binding" -->
+    <!-- step 4 class binding can be added with a conditional -->
+    <li *ngFor="let employee of employees"
+        [class.selected]="employee === selectedEmployee"
+        (click)="onSelect(employee)"
+    ><span class="badge">{{employee.id}}</span>
+     {{employee.name}}
+    </li>
+</ul>
+<!-- because this app will load selectedEmployee is undefined, therefore conditional applied to show div only when data can be provided, which is done in this case by the event binding to the above list items -->
+<div *ngIf="selectedEmployee">
+    <h2>{{selectedEmployee.name | uppercase}} Details</h2>
+    <div>
+        <span>id: </span>
+        {{selectedEmployee.id}}
+    </div>
+    <div>
+        <!-- how to tie an object property in a form element -->
+      <label for="employee-name">Alter Employee {{selectedEmployee.id}}'s name: </label>
+      <input id="employee-name" [(ngModel)]="selectedEmployee.name" placeholder="name"/>
+    </div>
+</div>
+

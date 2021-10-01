@@ -1,0 +1,52 @@
+/* employeesComponent's private CSS styles */
+.employees {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+  }
+  .employees li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: var(--light);
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  .employees li:hover {
+    color: var(--attention-highlight);
+    background-color: var(--siemen_ice_dark);
+    left: .1em;
+  }
+  .employees li.selected {
+    background-color: var(--siemens_teal);
+    color: var(--dark);
+  }
+  .employees li.selected:hover {
+    background-color: var(--neutral-dual);
+    color: var(--soft-highlight);
+  }
+  .employees li.selected:active {
+    background-color: var(--siemens_dark);
+    color: var(--neutral);
+  }
+  .employees .badge {
+    display: inline-block;
+    font-size: small;
+    color: var(--light);
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color:var(--siemens_ice_dark);
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  input {
+    padding: .5rem;
+  }

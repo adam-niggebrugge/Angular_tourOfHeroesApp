@@ -1,1 +1,13 @@
-<p>employee-detail works!</p>
+<!-- because this app will load selectedEmployee is undefined, therefore conditional applied to show div only when data can be provided, which is done in this case by the event binding to the above list items -->
+<div *ngIf="employee">
+    <h2>{{employee.name | uppercase}} Details</h2>
+    <div>
+        <span>id: </span>
+        {{employee.id}}
+    </div>
+    <div>
+        <!-- how to tie an object property in a form element -->
+      <label for="employee-name">Alter Employee {{employee.id}}'s name: </label>
+      <input id="employee-name" [(ngModel)]="employee.name" placeholder="name"/>
+    </div>
+</div>

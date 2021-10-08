@@ -4,11 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeesComponent } from './employees/employees.component';
 
 // Imports through tutorial directions for
 import { FormsModule } from '@angular/forms';
+//these were created through the ng generate component  <something> command
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component'; // NgModel lives here
+import { EmployeesComponent } from './employees/employees.component';
 
 
 @NgModule({

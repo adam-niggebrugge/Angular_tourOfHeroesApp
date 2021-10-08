@@ -173,20 +173,6 @@
     margin-left: 60px;
   }
 
-  svg#rocket {
-    width: 80px;
-    position: absolute;
-    left: -10px;
-    top: -24px;
-  }
-
-  svg#rocket-smoke {
-    height: calc(100vh - 95px);
-    position: absolute;
-    top: 10px;
-    right: 180px;
-    z-index: -10;
-  }
 
   a,
   a:visited,
@@ -264,38 +250,7 @@
     align-items: center;
   }
 
-  .github-star-badge {
-    color: var(--dark);
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid var(--transparent-dual);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg,var(--light),var(--soft-highlight) 90%);
-    margin-left: 4px;
-    font-weight: 600;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,var(--attention-highlight),var(--soft-highlight) 90%);
-    border-color: var(--transparent-dual);
-    background-position: -.5em;
-  }
-
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-  }
-
-  svg#clouds {
-    position: fixed;
-    bottom: -160px;
-    left: -230px;
-    z-index: -10;
-    width: 1920px;
-  }
+ 
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
@@ -313,15 +268,4 @@
       margin-left: 72px;
     }
 
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
-  }
-
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
   }

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
 
 // Imports through tutorial directions for
-import { FormsModule } from '@angular/forms'; // NgModel lives here
+import { FormsModule } from '@angular/forms';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component'; // NgModel lives here
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     //basic angular imports that will occur with 

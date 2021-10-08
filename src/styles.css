@@ -279,7 +279,7 @@
 
   .github-star-badge:hover {
     background-image: linear-gradient(-180deg,var(--attention-highlight),var(--soft-highlight) 90%);
-    border-color: var(transparent-dual);
+    border-color: var(--transparent-dual);
     background-position: -.5em;
   }
 

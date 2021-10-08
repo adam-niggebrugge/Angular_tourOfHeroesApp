@@ -6,11 +6,11 @@ export const EMPLOYEES: Employee[] = [
         name: 'Adam Niggebrugge',
     },
     { 
-        id: 105,
+        id: 1051,
         name: 'Tom Weeks',
     },
     { 
-        id: 201,
+        id: 21,
         name: 'Matt Nordmeyer',
     },
     { 
@@ -18,7 +18,7 @@ export const EMPLOYEES: Employee[] = [
         name: 'Ethan Stallman',
     },
     { 
-        id: 38,
+        id: 3811,
         name: 'Marwan Dayeh',
     },
     { 
@@ -26,7 +26,19 @@ export const EMPLOYEES: Employee[] = [
         name: 'Kirstie Schnieder',
     },
     { 
-        id: 65,
+        id: 659,
         name: 'Brady Dufau',
-    }
+    },
+    {
+        id: 12,
+        name: 'Nicholas Lang',
+    },
+    {
+        id: 131,
+        name: 'Anthony Soellner',
+    },
+    {
+        id: 28,
+        name: 'Benjamin Flick',
+    },
 ]

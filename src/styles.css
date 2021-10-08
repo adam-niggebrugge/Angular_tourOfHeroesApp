@@ -1,15 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --dark: #000000;
-    --highlight:#3EB595;
-    --attention-highlight: #FFF447;
-    --soft-highlight: #d1cd93d2;
     --light: #ffffff;
-    --neutral: #aaa8a5;
-    --transparent-neutral: #807c7770;
-    --transparent-dual: #3f478d70;
-    --wrong: red;
-    --right: green;
+    --dark: #000000;
+    --siemens_dark: #335B74;
+    --siemens_teal:#27CED7;
+    --siemens_ice_light: #1CADE4;
+    --siemens_ice_dark: #2683C6;
+    --neutral: #DFE3E5;
+    --neutral-dual: #576168;
+    --transparent-neutral: #dfe3e59a;
+    --transparent-dual: #5761688e;
+    --soft-highlight: #62E1E2;
+    --attention-highlight: #FF5617;
+
 }
 
 :host {
@@ -21,15 +24,33 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
+  h1 {
+    color: var(--siemens_teal);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+  }
+
   h2,
-  h3,
+  h3 {
+    color: var(--siemens_ice_dark);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+
   h4,
   h5,
   h6 {
     margin: 8px 0;
   }
 
+  body{
+    margin: 2em;
+  }
+
+  body, input[type="text"], button {
+    color: var(--siemens_dark);
+    font-family: Cambria, Georgia, serif;
+  }
   p {
     margin: 0;
   }
@@ -47,7 +68,7 @@
     display: flex;
     align-items: center;
     background-color: var(--neutral);
-    color: var(--light);
+    color: var(--siemens_teal);
     font-weight: 600;
   }
 
@@ -103,7 +124,7 @@
     all: unset;
     border-radius: 4px;
     border: 1px solid var(--soft-highlight);
-    background-color: var(--highlight);
+    background-color: var(--siemens_teal);
     height: 40px;
     width: 200px;
     margin: 0 8px 16px;
@@ -139,7 +160,7 @@
   }
 
   .card.highlight-card {
-    background-color: var(--hightlight);
+    background-color: var(--siemens_teal);
     color: var(--light);
     font-weight: 600;
     border: none;
@@ -258,7 +279,7 @@
 
   .github-star-badge:hover {
     background-image: linear-gradient(-180deg,var(--attention-highlight),var(--soft-highlight) 90%);
-    border-color: var(transparent-dual);
+    border-color: var(--transparent-dual);
     background-position: -.5em;
   }
 

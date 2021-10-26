@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeesComponent } from './employees/employees.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component'
 
 const routes: Routes = [
   //typical Angular route made of two components
@@ -12,6 +13,11 @@ const routes: Routes = [
   { 
      path: 'dashboard',
     component: DashboardComponent
+  },
+  { 
+    //as is typical of REST, : acts as placeholder
+    path: 'detail/:id',
+   component: EmployeeDetailComponent
   },
   {
     path: '',

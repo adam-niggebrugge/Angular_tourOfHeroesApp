@@ -5,7 +5,7 @@
     padding: 0;
     width: 15em;
   }
-  .employees li {
+  .employees li a {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -15,20 +15,20 @@
     height: 1.6em;
     border-radius: 4px;
   }
-  .employees li:hover {
+  .employees li a:hover {
     color: var(--attention-highlight);
     background-color: var(--siemen_ice_dark);
     left: .1em;
   }
-  .employees li.selected {
+  .employees li a.selected {
     background-color: var(--siemens_teal);
     color: var(--dark);
   }
-  .employees li.selected:hover {
+  .employees li a.selected:hover {
     background-color: var(--neutral-dual);
     color: var(--soft-highlight);
   }
-  .employees li.selected:active {
+  .employees li a.selected:active {
     background-color: var(--siemens_dark);
     color: var(--neutral);
   }

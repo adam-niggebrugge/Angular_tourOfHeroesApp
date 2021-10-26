@@ -1,0 +1,14 @@
+nav > a {
+    padding: 0.5em;
+    border : 1px solid var(--soft-highlight);
+    background-image: linear-gradient(var(--siemens_dark), var(--siemens_ice_dark));
+    background-color: var(--siemens_dark);
+    box-shadow: 2px 3px 5px var(--transparent-neutral);
+}
+
+nav > a:hover {
+    border : 1px solid var(--attention-highlight);
+    background-image: linear-gradient(var(--siemens_ice_light), var(--siemens_ice_dark));
+    background-color: var(--siemens_ice_light);
+    box-shadow: 3px 4px 5px var(--soft-highlight);
+}

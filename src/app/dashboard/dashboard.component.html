@@ -1,1 +1,7 @@
-<p>dashboard works!</p>
+<h2>Top Employees</h2>
+<div class="employees-menu">
+    <!-- *ngFor will create as many links as are in the array returned -->
+    <a *ngFor="let employee of employees">
+        {{employee.name}}
+    </a>
+</div>

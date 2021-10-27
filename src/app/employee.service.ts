@@ -24,16 +24,14 @@ export class EmployeeService {
    * object in the in-memory-data-service.ts
    * */
   private employeesUrl = 'api/employees';  // URL to web api
-
+  //seen in other MVCs that the below headers is often repeated. 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   constructor(
     private messageService: MessageService,
     private http: HttpClient,
   ) { }
-  
-  /** Log a EmployeeService message with the MessageService */
-  private log(message: string) {
-    this.messageService.add(`EmployeeService: ${message}`);
-  }
 
   getEmployees(): Observable<Employee[]> {
     //when using RxJS mock
@@ -66,23 +64,38 @@ export class EmployeeService {
     );
   }
 
+  /** PUT: update the hero on the server */
+  updateEmployee(employee: Employee): Observable<any> {
+    return this.http.put(this.employeesUrl, employee, this.httpOptions)
+      .pipe(
+        tap(_ => this.log(`updated employee id=${employee.id}`)),
+        catchError(this.handleError<any>('updateEmployee'))        
+      );
+  }
+
   /**
- * Handle Http operation that failed.
- * Let the app continue.
- * @param operation - name of the operation that failed
- * @param result - optional value to return as the observable result
- */
+  * Handle Http operation that failed.
+  * Let the app continue.
+  * @param operation - name of the operation that failed
+  * @param result - optional value to return as the observable result
+  */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-    // TODO: send the error to remote logging infrastructure
-    console.error(error); // log to console instead
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
 
-    // TODO: better job of transforming error for user consumption
-    this.log(`${operation} failed: ${error.message}`);
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
 
-    // Let the app keep running by returning an empty result.
-    return of(result as T);
-  };
-}
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
+  /** Log a EmployeeService message with the MessageService */
+  private log(message: string) {
+      this.messageService.add(`EmployeeService: ${message}`);
+  }
+  
 }

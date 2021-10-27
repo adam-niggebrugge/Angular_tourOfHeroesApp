@@ -10,6 +10,7 @@
       <label for="employee-name">Alter Employee {{employee.id}}'s name: </label>
       <input id="employee-name" [(ngModel)]="employee.name" placeholder="name"/>
     </div>
+    <button (click)="save()">save</button>
 </div>
 
 <button (click)="goBack()">go back</button>

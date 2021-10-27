@@ -30,6 +30,14 @@ export class EmployeeDetailComponent implements OnInit {
     .subscribe(employee => this.employee = employee)
   }
 
+  save(): void {
+    //check that there is data to submit
+    if (this.employee){
+      this.employeeService.updateEmployee(this.employee)
+        .subscribe(() => this.goBack());
+    }
+  }
+
   goBack(): void {
     this.location.back();
   }

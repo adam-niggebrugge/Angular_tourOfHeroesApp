@@ -17,6 +17,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeesComponent } from './employees/employees.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeeAdderComponent } from './employee-adder/employee-adder.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     EmployeesComponent,
     EmployeeDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    EmployeeAdderComponent
   ],
   imports: [
     //basic angular imports that will occur with scaffolding set up of ng generate 

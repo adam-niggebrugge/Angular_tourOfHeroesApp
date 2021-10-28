@@ -19,10 +19,11 @@ export class EmployeesComponent implements OnInit {
     this.getEmployees();
   }
 
-  onSelect(employee: Employee): void {
-    this.selectedEmployee = employee;
-    this.messageService.add(`EmployeesComponent: Selected employee id=${employee.id}`);
-  }
+  // In eariler step details were linked off employee list, dashboard and routing changed how to navigate to the details and no longer requires logic to select and return employee
+  //  onSelect(employee: Employee): void {
+  //   this.selectedEmployee = employee;
+  //   this.messageService.add(`EmployeesComponent: Selected employee id=${employee.id}`);
+  // }
 
    // Currently has a synchronous signature. Would not be practical in real app, as server might have to return this data to angular components
    getEmployees(): void {

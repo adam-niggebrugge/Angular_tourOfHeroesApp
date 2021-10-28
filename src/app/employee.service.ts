@@ -22,4 +22,11 @@ export class EmployeeService {
     return employees;
   }
 
+  getEmployee(id: number): Observable<Employee> {
+  // For now, assume that an employee with the specified `id` always exists.
+  // Error handling will be added in the next step of the tutorial.
+  const employee = EMPLOYEES.find(e => e.id === id)!;
+  this.messageService.add(`EmployeeService: fetched employee id=${id}`);
+  return of(employee);
+  }
 }

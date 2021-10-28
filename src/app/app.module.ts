@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component'; // NgModel lives here
 import { EmployeesComponent } from './employees/employees.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     EmployeesComponent,
     EmployeeDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     //basic angular imports that will occur with 

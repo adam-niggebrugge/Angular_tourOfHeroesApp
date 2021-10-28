@@ -1,0 +1,10 @@
+<h2>Top Employees</h2>
+<div class="employees-menu">
+    <!-- *ngFor will create as many links as are in the array returned -->
+     <!-- Angular interpolation binding within the *ngFor repeater to insert
+             the current iteration's hero.id into each routerLink -->
+    <a *ngFor="let employee of employees"
+        routerLink="/detail/{{employee.id}}" >
+        {{employee.name}}
+    </a>
+</div>

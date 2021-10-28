@@ -55,6 +55,20 @@ export class EmployeeService {
   //   return of(employee);
   // }
 
+  /** GET employee by id. Return `undefined` when id not found */
+  getEmployeeNo404<Data>(id: number): Observable<Employee> {
+    const url = `${this.employeesUrl}/?id=${id}`;
+    return this.http.get<Employee[]>(url)
+      .pipe(
+        map(employees => employees[0]), // returns a {0|1} element array
+        tap(h => {
+          const outcome = h ? `fetched` : `did not find`;
+          this.log(`${outcome} employee id=${id}`);
+        }),
+        catchError(this.handleError<Employee>(`getEmployee id=${id}`))
+      );
+  }
+
   /** GET employee by id. Will 404 if id not found */
   getEmployee(id: number): Observable<Employee> {
     const url = `${this.employeesUrl}/${id}`;
@@ -64,7 +78,7 @@ export class EmployeeService {
     );
   }
 
-  /** PUT: update the hero on the server */
+  /** PUT: update the employee on the server */
   updateEmployee(employee: Employee): Observable<any> {
     return this.http.put(this.employeesUrl, employee, this.httpOptions)
       .pipe(
@@ -73,19 +87,19 @@ export class EmployeeService {
       );
   }
 
-  /** POST: add a new hero to the server 
-   * It expects the server to generate an id for the new hero,
-   * which it returns in the Observable<Hero> to the caller.
+  /** POST: add a new employee to the server 
+   * It expects the server to generate an id for the new employee,
+   * which it returns in the Observable<Employee> to the caller.
   */
   addEmployee(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(this.employeesUrl, employee, this.httpOptions).pipe(
-      tap((newEmployee: Employee) => this.log(`added hero w/ id=${newEmployee.id}`)),
+      tap((newEmployee: Employee) => this.log(`added employee w/ id=${newEmployee.id}`)),
       catchError(this.handleError<Employee>('addEmployee'))
     );
   }
 
 
-  /** DELETE: delete the hero from the server */
+  /** DELETE: delete the employee from the server */
   deleteEmployee(id: number): Observable<Employee> {
     const url = `${this.employeesUrl}/${id}`;
 
@@ -95,16 +109,16 @@ export class EmployeeService {
     );
   }
 
-  /* GET heroes whose name contains search term */
+  /* GET employees whose name contains search term */
   searchEmployee(term: string): Observable<Employee[]> {
     if (!term.trim()) {
-      // if not search term, return empty hero array.
+      // if not search term, return empty employee array.
       return of([]);
     }
     return this.http.get<Employee[]>(`${this.employeesUrl}/?name=${term}`).pipe(
       tap(x => x.length ?
-        this.log(`found heroes matching "${term}"`) :
-        this.log(`no heroes matching "${term}"`)),
+        this.log(`found employees matching "${term}"`) :
+        this.log(`no employees matching "${term}"`)),
       catchError(this.handleError<Employee[]>('searchEmployee', []))
     );
   }

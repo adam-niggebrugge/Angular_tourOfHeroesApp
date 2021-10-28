@@ -13,7 +13,7 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./employee-search.component.css']
 })
 export class EmployeeSearchComponent implements OnInit {
-  employees$: Observable<Employee[]>;
+  employees$!: Observable<Employee[]>;
   private searchTerms = new Subject<string>();
 
   constructor(private employeeService: EmployeeService) { }

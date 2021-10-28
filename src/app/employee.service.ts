@@ -110,7 +110,7 @@ export class EmployeeService {
   }
 
   /* GET employees whose name contains search term */
-  searchEmployee(term: string): Observable<Employee[]> {
+  searchEmployees(term: string): Observable<Employee[]> {
     if (!term.trim()) {
       // if not search term, return empty employee array.
       return of([]);

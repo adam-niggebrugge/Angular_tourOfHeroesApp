@@ -1,15 +1,16 @@
 <div>
+    <h2>Add An Employee</h2>
     <form>
         <label for="new-employee">Employee name: </label>
             <input id="new-employee" #employeeName />
+        <div class="col">
         <label for="position">Employee Position: </label>
-            <select name="position" id="position" #position>
-                <option value="Production Engineer" selected>Production Engineer</option>
-                <option value="Engineer Manager">Engineer Manager</option>
-                <option value="R&D Engineer">R&D Engineer</option>
-                <option value="Manufacturing Engineer">Manufacturing Engineer</option>
-                <option value="Quality Engineer">Quality Engineer</option>
+            <select class="input-field col s12" style="display:block" name="position" id="position" #position >
+                <option *ngFor="let position of positions" [value]="position.value">
+                    {{position.viewValue}}
+                </option>
             </select>
+        </div>
         <!-- (click) passes input value to add() and then clears the input -->
         <button class="add-button" (click)="add(employeeName.value, position.value); employeeName.value=''">
         Add Employee

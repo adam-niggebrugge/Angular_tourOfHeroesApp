@@ -1,1 +1,18 @@
-<p>employee-adder works!</p>
+<div>
+    <form>
+        <label for="new-employee">Employee name: </label>
+            <input id="new-employee" #employeeName />
+        <label for="position">Employee Position: </label>
+            <select name="position" id="position" #position>
+                <option value="Production Engineer" selected>Production Engineer</option>
+                <option value="Engineer Manager">Engineer Manager</option>
+                <option value="R&D Engineer">R&D Engineer</option>
+                <option value="Manufacturing Engineer">Manufacturing Engineer</option>
+                <option value="Quality Engineer">Quality Engineer</option>
+            </select>
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button class="add-button" (click)="add(employeeName.value, position.value); employeeName.value=''">
+        Add Employee
+        </button>
+    </form>
+</div>

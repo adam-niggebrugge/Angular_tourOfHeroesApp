@@ -18,7 +18,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeAdderComponent } from './employee-adder/employee-adder.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroSearchComponent } from './employee-search/employee-search.component';
 
 
 @NgModule({

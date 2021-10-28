@@ -95,6 +95,20 @@ export class EmployeeService {
     );
   }
 
+  /* GET heroes whose name contains search term */
+  searchEmployee(term: string): Observable<Employee[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Employee[]>(`${this.employeesUrl}/?name=${term}`).pipe(
+      tap(x => x.length ?
+        this.log(`found heroes matching "${term}"`) :
+        this.log(`no heroes matching "${term}"`)),
+      catchError(this.handleError<Employee[]>('searchEmployee', []))
+    );
+  }
+
   /**
   * Handle Http operation that failed.
   * Let the app continue.

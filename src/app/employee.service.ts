@@ -41,7 +41,7 @@ export class EmployeeService {
     return this.http.get<Employee[]>(this.employeesUrl)
       .pipe(
         // RxJS tap() operator, which looks at the observable values, does something with those values, and passes them along. The tap() call back doesn't touch the values themselves.
-        tap(_ => this.log('fetched heroes')),
+        tap(_ => this.log('fetched employees')),
         catchError(this.handleError<Employee[]>('getEmployees', []))
       );
   }
@@ -71,6 +71,28 @@ export class EmployeeService {
         tap(_ => this.log(`updated employee id=${employee.id}`)),
         catchError(this.handleError<any>('updateEmployee'))        
       );
+  }
+
+  /** POST: add a new hero to the server 
+   * It expects the server to generate an id for the new hero,
+   * which it returns in the Observable<Hero> to the caller.
+  */
+  addEmployee(employee: Employee): Observable<Employee> {
+    return this.http.post<Employee>(this.employeesUrl, employee, this.httpOptions).pipe(
+      tap((newEmployee: Employee) => this.log(`added hero w/ id=${newEmployee.id}`)),
+      catchError(this.handleError<Employee>('addEmployee'))
+    );
+  }
+
+
+  /** DELETE: delete the hero from the server */
+  deleteEmployee(id: number): Observable<Employee> {
+    const url = `${this.employeesUrl}/${id}`;
+
+    return this.http.delete<Employee>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted employee id=${id}`)),
+      catchError(this.handleError<Employee>('deleteEmployee'))
+    );
   }
 
   /**

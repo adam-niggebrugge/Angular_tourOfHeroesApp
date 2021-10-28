@@ -12,7 +12,6 @@
 
   }
   .employees li a {
- 
     left: 0;
     color: var(--siemens_ice_dark);
     background-color: var(--neutral);
@@ -20,12 +19,12 @@
     height: 1.9em;
     border-radius: 4px;
   }
-  .employees a:hover {
+  .employees li:hover {
     color: var(--attention-highlight);
     background-color: var(--light);
     left: .1em;
   }
-  .employees a.selected {
+  .employees li.selected {
     background-color: var(--siemens_teal);
     color: var(--dark);
   }
@@ -33,7 +32,7 @@
     background-color: var(--neutral-dual);
     color: var(--soft-highlight);
   }
-  .employees a:active {
+  .employees li:active {
     background-color: var(--siemens_dark);
     color: var(--neutral);
   }
@@ -41,15 +40,21 @@
     display: inline-block;
     font-size: small;
     color: var(--light);
-    padding: 0.8em 0.7em 0 0.7em;
+    padding: 0.7em 0.7em 0 0.7em;
     background-color:var(--siemens_ice_dark);
     line-height: 1em;
     position: relative;
-    height: 1.8em;
+    height: 2.4em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+    float: none;
+    margin-left: 0em;
   }
   
   input {
+    display: block;
+    width: 100%;
     padding: .5rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
   }
